@@ -1,22 +1,44 @@
+/* =========================================
+   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   ========================================= */
+:root {
+    --cor-fundo: #f8f9fa;
+    --cor-texto: #333333;
+    --cor-primaria: #0f172a; /* Azul muito escuro, quase preto */
+    --cor-destaque: #3b82f6; /* Azul vibrante para botões */
+    --cor-card: #ffffff;
+    --fonte-principal: 'Inter', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Scroll suave ao clicar nos links do menu */
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
     line-height: 1.6;
 }
 
+/* =========================================
+   2. CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
 header {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px 10%;
-    border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Sombra bem leve */
+    backdrop-filter: blur(5px); /* Efeito de vidro */
 }
 
 nav {
@@ -25,69 +47,197 @@ nav {
     align-items: center;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    letter-spacing: 1px;
+}
+
 nav ul {
     display: flex;
     list-style: none;
+    align-items: center;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: var(--cor-texto);
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* =========================================
+   3. SEÇÃO HERO (Apresentação Inicial)
+   ========================================= */
 #hero {
-    height: 60vh;
+    height: 70vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #222;
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, #1e293b 100%);
     color: #fff;
     text-align: center;
+    padding: 0 20px;
 }
 
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #cbd5e1;
+}
+
+/* =========================================
+   4. ESTRUTURA DAS SEÇÕES (Sobre e Projetos)
+   ========================================= */
 section {
-    padding: 60px 10%;
+    padding: 80px 10%;
 }
 
 h2 {
-    border-left: 5px solid #555;
-    padding-left: 10px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 40px;
+    position: relative;
 }
 
+/* Detalhe visual embaixo dos títulos (Linha azul) */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--cor-destaque);
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.sobre-conteudo p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    color: #555;
+}
+
+/* =========================================
+   5. GRID DE PROJETOS E CARDS
+   ========================================= */
 .grid-projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .card {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    transition: 0.3s;
+    background: var(--cor-card);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+/* Efeito de levitar ao passar o mouse */
 .card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
 }
 
-.card a {
+.card-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Estilo do Botão nos Cards */
+.btn-projeto {
     display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
+    padding: 10px 20px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-destaque);
     text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    border: 1px solid var(--cor-destaque);
+    transition: all 0.3s;
 }
 
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #222;
+.btn-projeto:hover {
+    background-color: var(--cor-destaque);
     color: #fff;
+}
+
+/* =========================================
+   6. RODAPÉ E CONTATO
+   ========================================= */
+footer {
+    background: var(--cor-primaria);
+    color: #fff;
+    padding: 60px 10%;
+    text-align: center;
+}
+
+footer h2 {
+    color: #fff;
+}
+
+footer h2::after {
+    margin: 10px auto 0; /* Centraliza a linha no rodapé */
+}
+
+footer p {
+    margin-bottom: 30px;
+    color: #cbd5e1;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-footer {
+    padding: 12px 25px;
+    background-color: var(--cor-destaque);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-footer:hover {
+    background-color: #2563eb;
+}
+
+.btn-footer.outline {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.btn-footer.outline:hover {
+    background-color: #fff;
+    color: var(--cor-primaria);
 }

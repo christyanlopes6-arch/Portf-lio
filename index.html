@@ -4,54 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christyan Rienzo | Portfólio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">CR</div>
+            <div class="logo">CR.</div>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#contato" class="btn-nav">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="hero">
-        <h1>Christyan Rienzo</h1>
-        <p>Estudante de Gestão de TI & Desenvolvedor Full Stack</p>
+        <div class="hero-content">
+            <h1>Christyan Rienzo</h1>
+            <p>Estudante de Gestão de TI & Desenvolvedor Full Stack</p>
+        </div>
     </section>
 
     <section id="sobre">
         <h2>Sobre Mim</h2>
-        <p>Tenho 28 anos, moro em Jarinu/SP e curso o 5º semestre de Gestão em TI na Anhanguera. 
-           Focado em transformar processos através da tecnologia, com experiência em Python, Node.js e Java.</p>
+        <div class="sobre-conteudo">
+            <p>Tenho 28 anos, moro em Jarinu/SP e curso o 5º semestre de Gestão em TI na Anhanguera. Focado em transformar processos através da tecnologia, com experiência em <strong>Python, Node.js e Java</strong>.</p>
+        </div>
     </section>
 
     <section id="projetos">
         <h2>Projetos em Destaque</h2>
         <div class="grid-projetos">
-            <!-- Projeto 1 -->
+            
             <div class="card">
-                <h3>Projeto Poker</h3>
+                <div class="card-header">
+                    <h3>Projeto Poker</h3>
+                </div>
                 <p>Aplicação em Python para controle de ROI e gestão de banca.</p>
-                <a href="https://github.com/christyanlopes6-arch" target="_blank">Ver Código</a>
+                <div class="card-footer">
+                    <a href="https://github.com/christyanlopes6-arch" target="_blank" class="btn-projeto">Ver Código</a>
+                </div>
             </div>
-            <!-- Projeto 2 -->
+
             <div class="card">
-                <h3>Delivery Skina do Recanto</h3>
+                <div class="card-header">
+                    <h3>Delivery Skina do Recanto</h3>
+                </div>
                 <p>Sistema completo de gestão de pedidos usando Node.js e Java.</p>
-                <a href="#" target="_blank">Ver Código</a>
+                <div class="card-footer">
+                    <a href="#" target="_blank" class="btn-projeto">Ver Código</a>
+                </div>
             </div>
+
         </div>
     </section>
 
     <footer id="contato">
-        <p>Vamos conversar?</p>
-        <div class="links">
-            <a href="mailto:seuemail@gmail.com">Email</a>
-            <a href="https://github.com/christyanlopes6-arch" target="_blank">GitHub</a>
+        <div class="footer-content">
+            <h2>Vamos conversar?</h2>
+            <p>Estou aberto a novas oportunidades e conexões.</p>
+            <div class="links">
+                <a href="mailto:seuemail@gmail.com" class="btn-footer">Me mande um Email</a>
+                <a href="https://github.com/christyanlopes6-arch" target="_blank" class="btn-footer outline">Meu GitHub</a>
+            </div>
         </div>
     </footer>
 </body>
